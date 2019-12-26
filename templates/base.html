@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Authentication Check</title>
+    <link rel="stylesheet" href="{% static "/css/mystyle.css" %}">
+  </head>
+  <body>
+
+    <a href="/authView/">Home</a>
+    <a href="/authView/about/">About</a>
+    <a href="/authView/help/">Help</a>
+
+
+  {%block body_block%}
+
+  {%endblock%}
+
+
+  </body>
+</html>

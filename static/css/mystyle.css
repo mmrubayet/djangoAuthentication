@@ -1,0 +1,30 @@
+h1 {
+  color: #1E90FF;
+}
+
+p {
+  color: #A1B30C;
+}
+
+a:link, a:visited {
+  background-color: #045BB3;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 10px 10px 25px;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+  background-color: #B7CC04;
+  border-radius: 5px;
+}
+
+/* selected link */
+a:active {
+ color: blue;
+}
