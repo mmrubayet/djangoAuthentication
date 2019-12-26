@@ -28,3 +28,21 @@ a:hover {
 a:active {
  color: blue;
 }
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  float: left;
+  width: 300px;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
