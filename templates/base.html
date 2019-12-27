@@ -4,13 +4,35 @@
   <head>
     <meta charset="utf-8">
     <title>Authentication Check</title>
+
     <link rel="stylesheet" href="{% static "/css/mystyle.css" %}">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg mynav sticky-top" role="navigation" id="navbar">
 
-    <a href="/authView/">Home</a>
-    <a href="/authView/about/">About</a>
-    <a href="/authView/help/">Help</a>
+        <div class="navbar-nav navbar-left">
+          <a class="navbar-brand bigbrand mynav" href="{% url 'home' %}">Home</a>
+          <a class="nav-item nav-link" href="/authView/about/">About</a>
+          <a class="nav-item nav-link" href="/authView/help/">Help</a>
+
+          <div class="navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+
+            <a class="nav-item nav-link" href="{% url 'authView:logout' %}">Log Out</a>
+
+            {% else %}
+
+            <a class="nav-item nav-link" href="/authView/login/">Log In</a>
+            <a class="nav-item nav-link" href="/authView/signup/">Sign Up</a>
+
+            {% endif %}
+
+          </div>
+      </nav>
 
 
   {%block body_block%}
