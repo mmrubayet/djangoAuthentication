@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+
+from . import forms
+from django.contrib.auth import login, logout
 # Create your views here.
 
 def index(request):
@@ -16,3 +21,7 @@ def help(request):
 
 def about(request):
     return render(request, 'authView/about.html',)
+
+
+class SignUp(CreateView):
+    pass
