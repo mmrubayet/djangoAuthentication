@@ -16,8 +16,8 @@
 
         <div class="navbar-nav navbar-left">
           <a class="navbar-brand bigbrand mynav" href="{% url 'home' %}">Home</a>
-          <a class="nav-item nav-link" href="/authView/about/">About</a>
-          <a class="nav-item nav-link" href="/authView/help/">Help</a>
+          <a class="nav-item nav-link" href="{% url 'authView:about' %}">About</a>
+          <a class="nav-item nav-link" href="{% url 'authView:help' %}">Help</a>
 
           <div class="navbar-nav navbar-right">
             {% if user.is_authenticated %}
@@ -26,8 +26,8 @@
 
             {% else %}
 
-            <a class="nav-item nav-link" href="/authView/login/">Log In</a>
-            <a class="nav-item nav-link" href="/authView/signup/">Sign Up</a>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
+            <a class="nav-item nav-link" href="{% url 'authView:signup' %}">Sign Up</a>
 
             {% endif %}
 

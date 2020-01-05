@@ -18,13 +18,11 @@ from django.urls import path
 from django.conf.urls import url, include
 from . import views
 
-# from authView import views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('authView/', include('authView.urls', namespace='authView')),
-    path('authView/', include('django.contrib.auth.urls')),
+    # path('', include('authView.urls', namespace='authView')),
+    path('', include('authView.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('', views.HomePage.as_view(), name='home'),
     path('test/', views.TestPage.as_view(), name='test'),
     path('thanks/', views.ThanksPage.as_view(), name='thanks'),

@@ -11,9 +11,3 @@ class ThanksPage(TemplateView):
 
 class HomePage(TemplateView):
     template_name = "index.html"
-
-def index(request):
-    # return HttpResponse("Hello World!")
-
-    dict = {'insert_me':'Hello, This is from views.py file !'}
-    return render(request, 'authView/index.html', context = dict)
