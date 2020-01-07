@@ -6,8 +6,11 @@ from django.views.generic import TemplateView
 
 from . import forms
 from django.contrib.auth import login, logout
-# Create your views here.
 
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+
+# Create your views here.
 
 def help(request):
     helpDict = {'insertHelp' : 'This is from help views'}
@@ -15,7 +18,6 @@ def help(request):
 
 class AboutPage(TemplateView):
     template_name = 'about.html'
-
 
 class SignUp(CreateView):
     form_class = forms.UserCreateForm

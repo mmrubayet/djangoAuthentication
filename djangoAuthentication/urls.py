@@ -16,14 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from . import views
+from authView import views
+from django.contrib.auth import views as auth_views
+from . import views as vviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('authView.urls', namespace='authView')),
-    path('', include('authView.urls')),
+    path('', include('authView.urls', namespace='authView')),
+    # path('', include('authView.urls')),
     path('', include('django.contrib.auth.urls')),
-    path('', views.HomePage.as_view(), name='home'),
-    path('test/', views.TestPage.as_view(), name='test'),
-    path('thanks/', views.ThanksPage.as_view(), name='thanks'),
+    path('', vviews.HomePage.as_view(), name='home'),
+    path('test/', vviews.TestPage.as_view(), name='test'),
+    path('thanks/', vviews.ThanksPage.as_view(), name='thanks'),
+
+    path("login/", auth_views.LoginView.as_view(template_name="login.html"),name='login'),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("signup/", views.SignUp.as_view(template_name="signup.html"), name="signup"),
 ]
